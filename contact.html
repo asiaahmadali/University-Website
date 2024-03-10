@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>University website</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+        <!-- animation  -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css">
+  </head>
+  <body>
+    <section class="about-header">
+      <div class="nav-bar">
+        <img
+          src="./eduford_img/eduford_img/logo.png"
+          alt="a logo image"
+          class="logo"
+        />
+
+        <div class="icon-m">
+          <i class="fa fa-bars" class="menu-icon" onclick="show()"></i>
+        </div>
+
+        <ul class="nav-links" id="navlinks">
+          <div class="icon-c">
+            <i class="fa fa-times" class="cross-icon" onclick="hide()"></i>
+          </div>
+          <li><a href="index.html"> HOME</a></li>
+          <li><a href="about.html">ABOUT</a></li>
+          <li><a href="courses.html">COURSES</a></li>
+          <li><a href="blog.html"> BLOG</a></li>
+          <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+      </div>
+      <div class="header-content">
+        <h1>Contact Us</h1>
+      </div>
+    </section>
+
+    <!-- ---------------------------------------------------------- -->
+
+    <!-- contact sectioon page -->
+
+    <section class="contact-sec">
+      
+      <div class="map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d435521.9539495439!2d74.00471205732005!3d31.482517929398185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39190483e58107d9%3A0xc23abe6ccc7e2462!2sLahore%2C%20Punjab%2C%20Pakistan!5e0!3m2!1sen!2sus!4v1706699105016!5m2!1sen!2sus"
+          width="600"
+          height="450"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </section>
+
+    <!-- ----- -->
+    <section class="contact-address">
+
+      <div class="left-column">
+      <div class="address-row">
+        <i class="fa fa-home"></i>
+        <div class="address-info">
+          <h3>ABC Road, XYZ Building</h3>
+          <p>Lahore, Pakistan</p>
+        </div>
+      </div>
+
+      <div class="address-row">
+        <i class="fa fa-phone"></i>
+        <div class="address-info">
+          <h3>+92 32-765-889-544</h3>
+          <p>Monday to Friday, 7:00am to 10:00pm</p>
+        </div>
+      </div>
+
+      <div class="address-row">
+        <i class="fa fa-envelope"></i>
+        <div class="address-info">
+          <h3>info@University.edu.pk</h3>
+          <p>Feel free to conact us</p>
+        </div>
+      </div>
+    </div>
+
+      <div class="contact-right-column" data-aos="zoom-in-up">
+        <form name="submit-to-google-sheet">
+            <input type="text" name="Name" placeholder="Enter Your Name" required>
+            <input type="email" name="email" placeholder="Enter Your Eamil" required>
+            <textarea name="message"  rows="8" placeholder="Enter your message"></textarea>
+            <button type="submit" class="btn btn-sp">Submit Form</button>
+        </form>
+        <span id="msg"></span>
+    </div>
+
+    </section>
+
+    <!-- footer section -->
+
+    <div class="footer">
+      <h1>About Us</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat esse
+        placeat, optio minus nemo assumenda. esse placeat, optio minus nemo
+        assumenda.
+      </p>
+      <div class="footer-icons">
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-linkedin"></i>
+      </div>
+      <p class="conclusion-p">
+        Design By <i class="fa fa-heart"></i> <span>Asia Ahmad Ali</span>
+      </p>
+    </div>
+
+    <!-- Javascript section -->
+
+    <script>
+      const navlinks = document.getElementById("navlinks");
+      function show() {
+        navlinks.style.width = "200px";
+      }
+      function hide() {
+        navlinks.style.width = "0px";
+      }
+    </script>
+
+    <!-- message handle in form -->
+
+    <script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbzXSp99iObLkJxy5kqZVkejX9zRTrLWAPyF4a1VYZLd49rltGF1MWz6yuUQ-C2Q3bHTdg/exec'
+      const form = document.forms['submit-to-google-sheet']
+      const msg = document.getElementById('msg') ;
+    
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response =>{
+              msg.innerHTML='Message send successfully' ;
+              setTimeout(() => {
+                  msg.innerHTML='';
+              }, 5000);
+              form.reset() ;
+          })
+          .catch(error => console.error('Error!', error.message))
+      })
+    </script>
+
+                 <!-- animation link -->
+                 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+                 <script>
+                     AOS.init();
+                 </script>
+  </body>
+</html>

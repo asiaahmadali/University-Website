@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>University website</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+      <!-- animation  -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css">
+
+  </head>
+  <body>
+    <section class="about-header">
+      <div class="nav-bar">
+        <img
+          src="./eduford_img/eduford_img/logo.png"
+          alt="a logo image"
+          class="logo"
+        />
+
+        <div class="icon-m">
+          <i class="fa fa-bars" class="menu-icon" onclick="show()"></i>
+        </div>
+
+        <ul class="nav-links" id="navlinks">
+          <div class="icon-c">
+            <i class="fa fa-times" class="cross-icon" onclick="hide()"></i>
+          </div>
+          <li><a href="index.html"> HOME</a></li>
+          <li><a href="about.html">ABOUT</a></li>
+          <li><a href="courses.html">COURSES</a></li>
+          <li><a href="blog.html"> BLOG</a></li>
+          <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+      </div>
+      <div class="header-content">
+        <h1>About Us</h1>
+      </div>
+    </section>
+
+    <!-- ---------------------------------------------------------- -->
+
+    <!-- About content -->
+
+    <div class="about-content-block">
+      <div class="about-content" data-aos="fade-up-left">
+        <h1>We Are The World's Largest University</h1>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates
+          beatae ex officia tempore deserunt doloribus illo? At, perspiciatis
+          nemo. Fugiat perferendis, facere rerum quibusdam vitae perspiciatis
+          ullam tempore eius aspernatur laudantium molestiae blanditiis quaerat
+          incidunt maiores laboriosam a voluptatum illum?
+        </p>
+        <button class="btn">Contact Now</button>
+      </div>
+      <div class="about-img" data-aos="fade-up-right">
+        <img src="./eduford_img/eduford_img/about.jpg" alt="about-image" />
+      </div>
+    </div>
+
+    <!-- footer section -->
+
+    <div class="footer">
+      <h1>About Us</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat esse
+        placeat, optio minus nemo assumenda. esse placeat, optio minus nemo
+        assumenda.
+      </p>
+      <div class="footer-icons">
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-linkedin"></i>
+      </div>
+      <p class="conclusion-p">
+        Design By <i class="fa fa-heart"></i> <span>Asia Ahmad Ali</span>
+      </p>
+    </div>
+
+    <!-- Javascript section -->
+
+    <script>
+      const navlinks = document.getElementById("navlinks");
+      function show() {
+        navlinks.style.width = "200px";
+      }
+      function hide() {
+        navlinks.style.width = "0px";
+      }
+    </script>
+                 <!-- animation link -->
+                 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+                 <script>
+                     AOS.init();
+                 </script>
+  </body>
+</html>
